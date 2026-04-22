@@ -2,11 +2,24 @@ import { Phone } from 'lucide-react';
 
 export default function FloatingButtons() {
   return (
-    <a
-      href="tel:0898552888"
-      className="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white shadow-lg-fine transition-smooth"
-    >
-      <Phone size={24} />
-    </a>
+    <>
+      <div className="fixed bottom-8 left-4 z-50">
+        <button className="w-12 h-12 rounded-full bg-red-600 hover:bg-red-500 flex items-center justify-center shadow-lg animate-pulse transition-colors">
+          <Phone size={20} className="text-white" />
+        </button>
+      </div>
+
+      <div className="fixed bottom-8 right-4 z-50 flex flex-col gap-2">
+        <div className="w-12 h-12 rounded-full bg-blue-500 hover:bg-blue-400 flex items-center justify-center shadow-lg cursor-pointer transition-colors">
+          <span className="text-white text-xs font-bold">Zalo</span>
+        </div>
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="w-12 h-12 rounded-full bg-[#1a237e] hover:bg-[#283593] flex items-center justify-center shadow-lg cursor-pointer transition-colors text-white text-lg font-bold"
+        >
+          ↑
+        </button>
+      </div>
+    </>
   );
 }

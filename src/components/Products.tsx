@@ -1,71 +1,66 @@
-import { ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const products = [
+const productCategories = [
   {
-    name: 'Thang máy tải khách',
+    name: 'Thang máy tải khách Shanghai Mitsubishi',
     image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-    description: 'Giải pháp vận chuyển hành khách cao cấp',
   },
   {
-    name: 'Thang máy quan sát',
+    name: 'Thang máy quan sát Shanghai Mitsubishi',
     image: 'https://images.pexels.com/photos/1108117/pexels-photo-1108117.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-    description: 'Tạo điểm nhấn kiến trúc cho công trình',
   },
   {
-    name: 'Thang máy nâng hàng',
+    name: 'Thang máy nâng hàng Shanghai Mitsubishi',
     image: 'https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-    description: 'Vận chuyển hàng hóa an toàn và hiệu quả',
   },
   {
-    name: 'Thang máy bệnh viện',
+    name: 'Thang máy bệnh viện Shanghai Mitsubishi',
     image: 'https://images.pexels.com/photos/668300/pexels-photo-668300.jpeg?auto=compress&cs=tinysrgb&w=600&q=80',
-    description: 'Tiêu chuẩn y tế quốc tế',
   },
 ];
 
 export default function Products() {
+  const [start, setStart] = useState(0);
+  const visible = 4;
+
+  const prev = () => setStart((s) => Math.max(0, s - 1));
+  const next = () => setStart((s) => Math.min(productCategories.length - visible, s + 1));
+
   return (
-    <section className="section-spacing bg-white">
-      <div className="container-wide">
-        {/* Header */}
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-1 bg-blue-600 rounded-full" />
-            <p className="text-sm font-semibold text-blue-600 tracking-wide">SẢN PHẨM</p>
+    <section className="py-16 bg-gray-900">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex items-center justify-between mb-2">
+          <button
+            onClick={prev}
+            disabled={start === 0}
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white disabled:opacity-30 transition-colors"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <div className="flex gap-3 flex-1 mx-4">
+            {productCategories.slice(start, start + visible).map((cat) => (
+              <div key={cat.name} className="flex-1 group cursor-pointer">
+                <div className="overflow-hidden rounded-t">
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="bg-white text-center py-3 px-2 rounded-b hover:bg-[#1a237e] hover:text-white transition-colors">
+                  <p className="text-sm font-medium text-gray-800 group-hover:text-white transition-colors">{cat.name}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-            Dòng sản phẩm đa dạng
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl">
-            Từ thang máy tải khách, quan sát, nâng hàng đến thang máy bệnh viện, tất cả được tối ưu hóa cho từng ứng dụng
-          </p>
-        </div>
-
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, i) => (
-            <div key={i} className="card-hover group cursor-pointer rounded-2xl overflow-hidden border border-gray-100 shadow-sm-fine">
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden bg-gray-200">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover transition-smooth group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-smooth" />
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-bold text-gray-900 mb-2">{product.name}</h3>
-                <p className="text-sm text-gray-600 mb-4">{product.description}</p>
-                <button className="flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-smooth text-sm">
-                  Tìm hiểu thêm
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
-          ))}
+          <button
+            onClick={next}
+            disabled={start >= productCategories.length - visible}
+            className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white disabled:opacity-30 transition-colors"
+          >
+            <ChevronRight size={18} />
+          </button>
         </div>
       </div>
     </section>

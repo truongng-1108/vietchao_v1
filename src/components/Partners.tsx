@@ -1,53 +1,77 @@
+const partnerImages = [
+  'https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+  'https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+  'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400&q=80',
+];
+
 export default function Partners() {
   return (
-    <section className="section-spacing bg-white">
-      <div className="container-wide">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-blue-600 tracking-wide mb-3">
-            ĐỐI TÁC CHIẾN LƯỢC
-          </p>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-4">
-            Shanghai Mitsubishi - Việt Chào
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Hơn 20 năm hợp tác chiến lược, mang công nghệ thang máy hàng đầu thế giới tới Việt Nam
-          </p>
+    <section
+      className="relative py-20"
+      style={{
+        backgroundImage: 'url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      <div className="absolute inset-0 bg-[#0a1540]/75" />
+      <div className="relative z-10 max-w-6xl mx-auto px-4">
+        <h2 className="text-white text-3xl md:text-4xl font-bold text-center mb-3 tracking-wide">
+          ĐỐI TÁC
+        </h2>
+        <div className="flex justify-center mb-12">
+          <div className="flex items-center gap-2">
+            <div className="w-16 h-px bg-white/40" />
+            <div className="w-2 h-2 bg-red-500 rotate-45" />
+            <div className="w-16 h-px bg-white/40" />
+          </div>
         </div>
 
-        {/* Partnership content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6">
-            <div className="bg-blue-600 rounded-2xl p-8 text-white shadow-lg-fine">
-              <h3 className="text-2xl font-black mb-4">Shanghai Mitsubishi</h3>
-              <p className="text-blue-100 leading-relaxed mb-6">
-                Shanghai Mitsubishi Elevator, một trong những công ty thang máy hàng đầu thế giới, đã chọn Việt Chào là đại lý ủy quyền duy nhất tại Việt Nam.
-              </p>
-              <p className="text-blue-100 leading-relaxed">
-                Sự tin tưởng này là kết quả của sự tận tâm, chuyên nghiệp, và cam kết mang giá trị tốt nhất tới khách hàng.
-              </p>
-              <button className="mt-6 btn-outline border-white text-white hover:bg-white/10">
-                Tìm hiểu thêm
-              </button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div className="bg-[#1a237e] p-8 flex flex-col justify-center">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-1 h-8 bg-red-500 rounded" />
+              <h3 className="text-white text-xl font-bold tracking-wide">
+                SHANGHAI MITSUBISHI <span className="text-red-500 mx-2">—</span> VIỆT CHÀO
+              </h3>
             </div>
+            <p className="text-gray-200 text-sm leading-relaxed mb-4">
+              Trải qua nhiều thử thách, mối quan hệ hợp tác chiến lược gần 20 năm giữa Shanghai Mitsubishi và Việt Chào ngày càng khăng khít. Điều gì đã khiến Việt Chào nỗ lực trở thành đại lý ủy quyền duy nhất của Shanghai Mitsubishi tại Việt Nam?
+            </p>
+            <a href="#" className="text-blue-300 text-sm hover:text-white transition-colors">Xem thêm &gt;&gt;</a>
           </div>
 
-          {/* Logo */}
-          <div className="flex items-center justify-center">
-            <div className="bg-white rounded-2xl p-12 shadow-lg-fine border border-gray-200">
-              <div className="flex flex-col items-center gap-3 mb-6">
-                <div className="flex gap-2">
-                  <div className="w-6 h-8 bg-red-600 rounded-sm" />
-                  <div className="w-6 h-8 bg-red-600 rounded-sm -ml-3" />
+          <div className="bg-white flex items-center justify-center p-8">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <div className="flex flex-col">
+                  <div className="w-8 h-6 bg-red-600 clip-triangle mb-1" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
+                  <div className="w-8 h-6 bg-red-700 clip-triangle" style={{ clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)' }} />
+                </div>
+                <div>
+                  <p className="text-gray-800 text-2xl font-bold tracking-tight leading-tight">上海三菱电梯</p>
+                  <p className="text-gray-600 text-xs tracking-widest">SHANGHAI MITSUBISHI ELEVATOR</p>
                 </div>
               </div>
-              <p className="text-2xl font-black text-gray-900 text-center mb-2">
-                上海三菱电梯
-              </p>
-              <p className="text-xs text-center text-gray-600 font-medium tracking-wide">
-                SHANGHAI MITSUBISHI ELEVATOR
-              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {partnerImages.map((img, i) => (
+            <div key={i} className="overflow-hidden rounded cursor-pointer group">
+              <img
+                src={img}
+                alt={`Partner ${i + 1}`}
+                className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          ))}
+          <div className="bg-white flex items-center justify-center rounded p-4">
+            <div className="text-center">
+              <div className="text-blue-700 font-bold text-sm tracking-wide">BAI</div>
+              <div className="text-[10px] text-gray-500 tracking-wider">BRIGGS AMASCO INTERNATIONAL</div>
             </div>
           </div>
         </div>

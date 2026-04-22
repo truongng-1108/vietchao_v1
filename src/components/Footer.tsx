@@ -1,107 +1,70 @@
-import { MapPin, Phone, Mail, Linkedin, Facebook, Youtube } from 'lucide-react';
+import { MapPin, Mail, Phone } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      {/* Main footer */}
-      <div className="section-spacing border-b border-gray-800">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Company */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-black text-xs">VC</span>
-                </div>
-                <div>
-                  <p className="font-black text-white text-sm">VIỆT CHÀO</p>
-                  <p className="text-xs text-gray-500">Elevator Solutions</p>
-                </div>
-              </div>
-              <p className="text-sm leading-relaxed text-gray-400">
-                Hơn 20 năm cung cấp giải pháp thang máy chất lượng cao, an toàn và đáng tin cậy cho khách hàng trên khắp đất nước.
-              </p>
+    <footer className="bg-[#0d1657] text-white">
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div className="mb-4">
+              <span className="text-white font-black text-2xl tracking-widest">VIET CHAO</span>
+              <p className="text-[#8fa0d8] text-[10px] tracking-widest">THE BEST CHOICE FOR BUILDINGS</p>
             </div>
-
-            {/* Solutions */}
-            <div>
-              <h4 className="font-bold text-white mb-6 text-sm tracking-wide">SẢN PHẨM</h4>
-              <ul className="space-y-3 text-sm">
-                {['Thang máy tải khách', 'Thang máy quan sát', 'Thang máy nâng hàng', 'Thang máy bệnh viện'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-white transition-smooth">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="font-bold text-white mb-6 text-sm tracking-wide">DỊCH VỤ</h4>
-              <ul className="space-y-3 text-sm">
-                {['Tư vấn thiết kế', 'Lắp đặt chuyên nghiệp', 'Bảo hành & bảo trì', 'Hiện đại hóa', 'Kiểm định'].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="hover:text-white transition-smooth">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-bold text-white mb-6 text-sm tracking-wide">LIÊN HỆ</h4>
-              <div className="space-y-4 text-sm">
-                <div className="flex gap-3">
-                  <MapPin size={16} className="text-blue-400 flex-shrink-0 mt-0.5" />
-                  <p>Số 29, Ngõ 165 Cầu Giấy<br />Hà Nội, Việt Nam</p>
-                </div>
-                <div className="flex gap-3">
-                  <Phone size={16} className="text-blue-400 flex-shrink-0" />
-                  <a href="tel:0898552888" className="hover:text-white transition-smooth">0898 552 888</a>
-                </div>
-                <div className="flex gap-3">
-                  <Mail size={16} className="text-blue-400 flex-shrink-0" />
-                  <a href="mailto:info@vietchao.vn" className="hover:text-white transition-smooth">info@vietchao.vn</a>
-                </div>
-              </div>
-            </div>
+            <p className="text-gray-400 text-xs leading-relaxed">
+              Công ty CP Việt Chào chuyên cung cấp và lắp đặt thang máy, thang cuốn, bãi đỗ xe tự động với chất lượng hàng đầu.
+            </p>
           </div>
 
-          {/* Divider */}
-          <div className="border-t border-gray-800 pt-8">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-              <p className="text-sm text-gray-500">
-                © 2024 Công ty CP Việt Chào. Tất cả quyền được bảo lưu.
-              </p>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-smooth">
-                  <Facebook size={18} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-smooth">
-                  <Linkedin size={18} />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-blue-600 flex items-center justify-center transition-smooth">
-                  <Youtube size={18} />
-                </a>
-              </div>
-            </div>
+          <div>
+            <h4 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Liên Hệ</h4>
+            <ul className="space-y-2 text-xs text-gray-400">
+              <li className="flex items-start gap-2">
+                <MapPin size={13} className="mt-0.5 text-red-400 flex-shrink-0" />
+                <span>Số 29, Ngõ 165 Cầu Giấy, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone size={13} className="text-red-400 flex-shrink-0" />
+                <span>0898 552 888</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail size={13} className="text-red-400 flex-shrink-0" />
+                <span>info@vietchao.vn</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Sản Phẩm</h4>
+            <ul className="space-y-1.5 text-xs text-gray-400">
+              {['Thang máy tải khách', 'Thang máy quan sát', 'Thang máy nâng hàng', 'Thang máy bệnh viện', 'Thang cuốn', 'Bãi đỗ xe tự động'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="hover:text-white transition-colors hover:pl-1 transition-all">{item}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-bold text-sm mb-4 uppercase tracking-wider border-b border-white/10 pb-2">Dịch Vụ</h4>
+            <ul className="space-y-1.5 text-xs text-gray-400">
+              {['Tư vấn lắp đặt', 'Bảo hành bảo trì', 'Sửa chữa thang máy', 'Hiện đại hóa thang máy', 'Kiểm định thang máy'].map((item) => (
+                <li key={item}>
+                  <a href="#" className="hover:text-white transition-colors">{item}</a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="py-6 border-t border-gray-800">
-        <div className="container-wide flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
-          <p>Thiết kế bởi Việt Chào</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-gray-300 transition-smooth">Điều khoản dịch vụ</a>
-            <a href="#" className="hover:text-gray-300 transition-smooth">Chính sách riêng tư</a>
-            <a href="#" className="hover:text-gray-300 transition-smooth">Sitemap</a>
-          </div>
+      <div className="border-t border-white/10 py-4">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+          <p className="text-gray-500 text-xs">
+            © 2024 Công ty CP Việt Chào. Tất cả quyền được bảo lưu.
+          </p>
+          <p className="text-gray-500 text-xs">
+            Thiết kế bởi <span className="text-blue-400">Việt Chào</span>
+          </p>
         </div>
       </div>
     </footer>
