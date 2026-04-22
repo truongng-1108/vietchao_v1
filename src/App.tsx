@@ -10,9 +10,9 @@ import FloatingButtons from './components/FloatingButtons';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <Header />
-      <div className="pt-[108px]">
+      <main className="pt-20">
         <HeroSlider />
         <WhyChoose />
         <Partners />
@@ -20,7 +20,7 @@ function App() {
         <Products />
         <FeaturedProjects />
         <Footer />
-      </div>
+      </main>
       <FloatingButtons />
     </div>
   );
